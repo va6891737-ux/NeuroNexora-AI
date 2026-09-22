@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NeuroNexora AI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            🧠 <b>NeuroNexora</b>
+        </div>
+
+        <button class="new-chat" onclick="newChat()">
+            ＋ New Decision
+        </button>
+
+        <div class="menu">
+
+            <a href="#home">🏠 Home</a>
+
+            <a href="#profile">👤 Personal Context</a>
+
+            <a href="#analysis">🔍 Decision Analysis</a>
+
+            <a href="#comparison">📊 Compare Options</a>
+
+            <a href="#explain">💡 Explainability</a>
+
+            <a href="#dashboard">📈 Dashboard</a>
+
+        </div>
+
+        <div class="sidebar-footer">
+            <small>NeuroNexora AI</small>
+            <br>
+            <small>Human-Centric Intelligence</small>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div class="mobile-logo">
+                🧠 NeuroNexora AI
+            </div>
+
+        </header>
+
+
+        <!-- HOME / CHAT -->
+        <section id="home" class="chat-page">
+
+            <div class="welcome">
+
+                <div class="ai-logo">
+                    🧠
+                </div>
+
+                <h1>NeuroNexora AI</h1>
+
+                <h2>How can I help you decide?</h2>
+
+                <p>
+                    Personalized, explainable and comparable
+                    AI-assisted decision support.
+                </p>
+
+            </div>
+
+
+            <!-- CHAT AREA -->
+            <div id="chatArea" class="chat-area"></div>
+
+
+            <!-- INPUT -->
+            <div class="input-container">
+
+                <textarea
+                    id="userInput"
+                    placeholder="Ask NeuroNexora AI about a decision..."
+                    rows="1"
+                ></textarea>
+
+                <button onclick="sendMessage()" class="send-button">
+                    ➤
+                </button>
+
+            </div>
+
+
+            <!-- QUICK OPTIONS -->
+            <div class="quick-options">
+
+                <button onclick="quickMessage('Help me choose a career')">
+                    🎯 Career
+                </button>
+
+                <button onclick="quickMessage('Help me choose a course')">
+                    🎓 Education
+                </button>
+
+                <button onclick="quickMessage('Help me choose a project')">
+                    💻 Project
+                </button>
+
+                <button onclick="quickMessage('Compare my options')">
+                    📊 Compare
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROFILE -->
+        <section id="profile" class="page-section">
+
+            <h2>👤 Personal Context</h2>
+
+            <p>
+                Add your information to receive more personalized
+                decision-support insights.
+            </p>
+
+            <div class="form-card">
+
+                <input
+                    id="name"
+                    type="text"
+                    placeholder="Your name"
+                >
+
+                <input
+                    id="education"
+                    type="text"
+                    placeholder="Education"
+                >
+
+                <input
+                    id="goal"
+                    type="text"
+                    placeholder="Career / Decision Goal"
+                >
+
+                <input
+                    id="skills"
+                    type="text"
+                    placeholder="Skills (Python, SQL, HTML...)"
+                >
+
+                <button onclick="saveProfile()">
+                    💾 Save Profile
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ANALYSIS -->
+        <section id="analysis" class="page-section">
+
+            <h2>🔍 Decision Analysis</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <span>💻</span>
+                    <h3>Software Engineering</h3>
+                    <p>
+                        Programming, software development
+                        and problem solving.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <span>📊</span>
+                    <h3>Data Analytics</h3>
+                    <p>
+                        SQL, data analysis and
+                        business insights.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <span>🌐</span>
+                    <h3>Web Development</h3>
+                    <p>
+                        HTML, CSS, JavaScript and
+                        web applications.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- COMPARISON -->
+        <section id="comparison" class="page-section">
+
+            <h2>📊 Compare Options</h2>
+
+            <div class="comparison-card">
+
+                <div>
+                    <h3>💻 Software Engineering</h3>
+                    <p>Programming • Java • Python • SQL</p>
+                </div>
+
+                <div>
+                    <h3>📊 Data Analytics</h3>
+                    <p>Python • SQL • Excel • Visualization</p>
+                </div>
+
+                <div>
+                    <h3>🌐 Web Development</h3>
+                    <p>HTML • CSS • JavaScript</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- EXPLAINABILITY -->
+        <section id="explain" class="page-section">
+
+            <h2>💡 Explainable AI</h2>
+
+            <div class="explain-card">
+
+                <h3>Why this recommendation?</h3>
+
+                <p>
+                    NeuroNexora AI considers your personal context,
+                    goals and skills before generating
+                    decision-support insights.
+                </p>
+
+                <ul>
+                    <li>✓ Personal context considered</li>
+                    <li>✓ User goals considered</li>
+                    <li>✓ Skills considered</li>
+                    <li>✓ Multiple options compared</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="page-section">
+
+            <h2>📈 Decision Dashboard</h2>
+
+            <div class="dashboard-grid">
+
+                <div class="metric">
+                    <span>🎯</span>
+                    <h3 id="dashGoal">Not set</h3>
+                    <p>Decision Goal</p>
+                </div>
+
+                <div class="metric">
+                    <span>📊</span>
+                    <h3 id="dashScore">--%</h3>
+                    <p>Compatibility</p>
+                </div>
+
+                <div class="metric">
+                    <span>🧠</span>
+                    <h3>AI</h3>
+                    <p>Decision Support</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
